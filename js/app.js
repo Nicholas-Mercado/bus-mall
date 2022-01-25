@@ -7,7 +7,7 @@
 //  ***************** Global VARIABLES ***************
 
 
-let totalRounds = 5;
+let totalRounds = 25;
 
 const allItems = [];
 
