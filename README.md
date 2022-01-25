@@ -70,3 +70,13 @@ Show report of
 - File path of image
 - Times the image has been shown
 - times a item has been clicked
+
+## LAB - 12
+
+#### __Links and Resources__
+
+[Array.prototype.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+
+#### __Reflections and Comments__
+
