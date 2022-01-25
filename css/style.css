@@ -4,4 +4,45 @@
 
 body{
   background-color:lightgrey;
+  text-align: center;
+
+}
+
+main{
+
+}
+
+h2{
+  font-size: 350%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#container{
+  height: 500px;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  background-color:lightcoral;
+  justify-content: space-around;
+}
+
+#container img{
+  flex:0% ;
+  gap: 30px;
+}
+
+main div{
+font-size: 250%;
+margin-top: 40px;
+margin-bottom: 40px;
+border-radius: 0%;
+background-color:lightcyan;
+width: 30%;
+
+}
+
+#chart{
+  
+  width: 80%;
 }
