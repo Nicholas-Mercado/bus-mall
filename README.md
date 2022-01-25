@@ -20,6 +20,8 @@ https://www.w3schools.com/js/js_htmldom_eventlistener.asp
 
 https://www.w3schools.com/js/js_object_constructors.asp
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
 #### __Reflections and Comments__
 
 Tried to not to use class notes. Work through the problem then refrance notes when stuck. Also take notes on parts I missed in project domain.
@@ -45,9 +47,10 @@ Tried to not to use class notes. Work through the problem then refrance notes wh
         - if not exist push
 -control rounds 25
 
-add event listener for image-assets clicks 
 
-add event listemer for button report
+append the dom images
+
+append the dom report
 
 
 Show report of 
