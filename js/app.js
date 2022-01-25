@@ -7,7 +7,7 @@
 //  ***************** Global VARIABLES ***************
 
 
-let totalRounds = 25;
+let totalRounds = 5;
 
 const allItems = [];
 
@@ -20,7 +20,7 @@ const allItems = [];
 //   - button report
 
 let container = document.getElementById('container');
-let report = document.getElementById("show-results-btn");
+let report = document.getElementById('showresultsbtn');
 
 // grab dom for to populate images
 //   - Images x 3
@@ -82,12 +82,11 @@ console.log(allItems);
 // Random number generator x
 
 
-// render image function 
-// control logic make sure all images are unique
-// use array method to see if number already exists
-// push numbers into array
-// if not exist push -control rounds 25
-// use array to store 3 random numbers
+// render image function x
+// control logic make sure all images are unique x
+// use array method to see if number already exists x
+// push numbers into array x
+// use array to store 3 random numbers x
 
 function getRandomItem(){
   // Dont understand why * allItems
@@ -96,10 +95,10 @@ function getRandomItem(){
 }
 
 function renderImage(){
-  // use array to store 3 random numbers 
+  // use array to store 3 random numbers
   //missed
   let runingImage = [];
-  
+
   // control logic make sure all images are unique
   while(runingImage.length < 3){
     let randomNumber = getRandomItem();
@@ -109,15 +108,17 @@ function renderImage(){
     }
   }
   // shows three random number in running image array
-  console.log(runingImage);
-  
+  // console.log(runingImage);
+
   let x = runingImage.pop();
   let y = runingImage.pop();
   let z = runingImage.pop();
-  console.log(x);
-  console.log(y);
-  console.log(z);
-  
+  // console.log(x);
+  // console.log(y);
+  // console.log(z);
+
+  //render images
+  // append the dom images
   imgOne.src = allItems[x].src;
   imgOne.alt = allItems[x].name;
   allItems[x].views++;
@@ -135,8 +136,58 @@ renderImage();
 
 // ******************** Events!*******************
 
-  // Event images
 
-  // append the dom report
 
-  
+function handleClick(event){
+
+  // incremets down each round
+  totalRounds--;
+  // incremetns to key name clicks
+  // Dont understand event.target.alt
+  let imgClick = event.target.alt;
+  for(let i = 0; i < allItems.length; i++){
+    if(imgClick === allItems[i].name) {
+      console.log(imgClick);
+      // increments votes for each object
+      allItems[i].clicks++;
+    }
+  }
+  // rerender images
+  renderImage();
+
+  // end attempts - knew I needed but had to reference
+  if(totalRounds === 0){
+    container.removeEventListener('click', handleClick);
+  }
+}
+
+
+
+// append the dom report
+
+function handleResults(event){
+  let resultsList = document.getElementById('display-results');
+  if(totalRounds === 0){
+    // loop through each object and create list
+    // Creates multi li elements
+    for(let i = 0; i < allItems.length; i++){
+      let li = document.createElement('li');
+      console.log(li);
+      //banana had 3 votes, and was seen 5 times.
+      li.textContent = `${allItems[i].name} had ${allItems[i].clicks} votes, and was seen ${allItems[i].views} times`;
+      resultsList.appendChild(li);
+      console.log(li);
+    }
+  }
+}
+
+
+
+
+// event listener click
+container.addEventListener('click', handleClick);
+
+// event listener submit
+report.addEventListener('click', handleResults);
+
+
