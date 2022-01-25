@@ -12,23 +12,28 @@ __Author:__ Nicholas Mercado
 
 #### __Links and Resources__
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
+[constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
 
-https://stackoverflow.com/questions/60326877/how-can-i-grab-the-content-of-a-dom-element-only-once-if-selecting-an-entire-tre
+[How can I grab the content of a DOM](https://stackoverflow.com/questions/60326877/how-can-i-grab-the-content-of-a-dom-element-only-once-if-selecting-an-entire-tre)
 
-https://www.w3schools.com/js/js_htmldom_eventlistener.asp
+[JavaScript HTML DOM EventListener](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
 
-https://www.w3schools.com/js/js_object_constructors.asp
+[JavaScript Object Constructors](https://www.w3schools.com/js/js_object_constructors.asp)
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+[Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
+[Array.prototype.unshift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+
+[7 Tips to Handle undefined in JavaScript](https://dmitripavlutin.com/7-tips-to-handle-undefined-in-javascript/)
 
 #### __Reflections and Comments__
 
-Tried to not to use class notes. Work through the problem then refrance notes when stuck. Also take notes on parts I missed in project domain.
+Today I tried to rely on my class notes as little as possible, only referencing them when I was stuck. It made for alot of googling but I was pleasantly surprised with how much I had retained. <br> 
+I need to work on my logic. I have a general idea of what I want to accomplish and can get most of the way there but I need to work on best practices. 
 
-##### Breakdown of problem domain
+#### Breakdown of problem domain
 
-###### Global Variables
+##### Global Variables
 
 - Add a control rounds variables
 - items array
@@ -36,7 +41,7 @@ Tried to not to use class notes. Work through the problem then refrance notes wh
   - container
   - button report
   
-###### Functions
+##### Functions
 
 - Random number generator
 - render image function
@@ -58,7 +63,7 @@ Show report of
   - how many times clicked
   - how many times seen
   
-###### Constructor
+##### Constructor
 
 
 - Name of the product
