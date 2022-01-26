@@ -17,8 +17,8 @@ body{
 }
 
 #container img{
-  padding-top: 30px;
-  max-width: 550px;
+  padding-top: 40px;
+  max-height: 350px;
   min-width: 200px;
   margin: 30px;
 }
