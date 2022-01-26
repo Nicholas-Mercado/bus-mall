@@ -1,7 +1,7 @@
 'use strict';
 
 let totalRounds = 25;
-const allItems = [];
+let allItems = [];
 let runningImage = [];
 
 
@@ -24,29 +24,37 @@ function Item(name, fileExtension = 'jpg') {
   this.views = 0;
   this.clicks = 0;
   allItems.push(this);
-
+  
 }
 
-new Item('bag');
-new Item('banana');
-new Item('bathroom');
-new Item('boots');
-new Item('breakfast');
-new Item('bubblegum');
-new Item('chair');
-new Item('cthulhu');
-new Item('dog-duck');
-new Item('dragon');
-new Item('pen');
-new Item('pet-sweep');
-new Item('scissors');
-new Item('shark');
-new Item('sweep', 'png');
-new Item('tauntaun');
-new Item('unicorn');
-new Item('water-can');
-new Item('wine-glass');
+let retrieveItems = localStorage.getItem('items');
+let parsedItems = JSON.parse(retrieveItems);
+// console.log(parsedItems);
 
+if(retrieveItems){
+  allItems = parsedItems;
+}else{
+
+  new Item('bag');
+  new Item('banana');
+  new Item('bathroom');
+  new Item('boots');
+  new Item('breakfast');
+  new Item('bubblegum');
+  new Item('chair');
+  new Item('cthulhu');
+  new Item('dog-duck');
+  new Item('dragon');
+  new Item('pen');
+  new Item('pet-sweep');
+  new Item('scissors');
+  new Item('shark');
+  new Item('sweep', 'png');
+  new Item('tauntaun');
+  new Item('unicorn');
+  new Item('water-can');
+  new Item('wine-glass');
+}
 console.log(allItems);
 
 // ********************** FUNCTIONS******************
@@ -95,7 +103,7 @@ function handleClick(event) {
   let imgClick = event.target.alt;
   for (let i = 0; i < allItems.length; i++) {
     if (imgClick === allItems[i].name) {
-      console.log(imgClick);
+      // console.log(imgClick);
       allItems[i].clicks++;
     }
   }
@@ -112,7 +120,15 @@ function handleResults(event) {
   if (totalRounds === 0) {
     renderChart();
   }
+  // *****LOCAL STORAGE********
+  // Step one Stringify
+  let stringAllItems = JSON.stringify(allItems);
+
+  // step two Set the Item in Storage
+  localStorage.setItem('items',stringAllItems);
+  // console.log(stringAllItems);
 }
+
 
 container.addEventListener('click', handleClick);
 report.addEventListener('click', handleResults);
