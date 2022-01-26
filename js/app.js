@@ -116,7 +116,7 @@ function renderImage() {
   // shows three random number in running image array
   // console.log(runningImage);
   // runningImage = runningImage.splice(0, 3);
-  
+
   let x = runningImage.shift();
   let y = runningImage.shift();
   let z = runningImage.shift();
@@ -124,21 +124,21 @@ function renderImage() {
   console.log(x);
   console.log(y);
   console.log(z);
-  
+
   //render images
   // append the dom images
   imgOne.src = allItems[x].src;
   imgOne.alt = allItems[x].name;
   allItems[x].views++;
-  
+
   imgTwo.src = allItems[y].src;
   imgTwo.alt = allItems[y].name;
   allItems[y].views++;
-  
+
   imgThree.src = allItems[z].src;
   imgThree.alt = allItems[z].name;
   allItems[z].views++;
-  
+
 }
 renderImage();
 
@@ -189,6 +189,12 @@ report.addEventListener('click', handleResults);
 
 // ********************Chart***********************
 function renderChart() {
+
+  const e = document.querySelector('#container');
+  e.remove();
+  const b = document.querySelector('#showresultsbtn');
+  b.remove();
+
   let itemNames = [];
   let itemClicks = [];
   let itemViews = [];
@@ -208,16 +214,16 @@ function renderChart() {
         label: '# of Votes',
         data: itemClicks,
         backgroundColor:
-          'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+          '#7F9172',
+        borderColor: '#7F9172',
         borderWidth: 1
       },
       {
         label: '# of views',
         data: itemViews,
         backgroundColor:
-          'red',
-        borderColor: 'red',
+          '#567568',
+        borderColor: '#567568',
         borderWidth: 1
       }]
     },
