@@ -1,7 +1,132 @@
 /* *{
-  border:1px solid black;
+  border: solid black 1px;
 } */
-
 body{
-  background-color:lightgrey;
+
+  background-color:#D5DFE5;
+  text-align: center;
 }
+
+#container{
+  /* margin-top: 30px; */
+  /* width: 70%; */
+  display: flex;
+  justify-content: center;
+  align-items:baseline;
+  background-color:#D5DFE5 ;
+}
+
+#container img{
+  padding-top: 40px;
+  max-height: 350px;
+  min-width: 200px;
+  margin: 30px;
+}
+
+
+header{
+  font-family: 'Mochiy Pop P One', sans-serif;
+  height: 220px;
+  background-color: #C9B1BD;
+}
+
+header h2{
+  color: aliceblue;
+  padding-top: 70px;
+  font-size: 400%;
+}
+
+#chart{
+  padding-top: 30px;
+  margin: auto;
+  max-width: 1550px;
+  min-width: 200px;
+  
+}
+
+#showresultsbtn{
+  font-family: 'Mochiy Pop P One', sans-serif;
+  border-radius:10%;
+  padding-top: 2vw;
+  font-size: x-large;
+  height: 100px;
+  margin: auto;
+  width:10%;
+  color: aliceblue;
+background-color: #567568 ;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* main{
+  text-align: center;
+
+}
+
+h2{
+  background-color: lightgreen;
+  font-size: 350%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 30%;
+}
+
+#container{
+  height: 500px;
+  width: 80%;
+  margin: auto;
+  flex-shrink: 3;
+  display: flex;
+  
+  justify-content: space-around;
+}
+
+#container img{
+  margin: 30px;
+}
+
+main div{
+font-size: 250%;
+margin-top: 40px;
+margin-bottom: 40px;
+border-radius: 0%;
+background-color:lightcyan;
+width: 30%;
+
+}
+
+#chart{
+  
+  width: 70%;
+} */

@@ -3,21 +3,29 @@
 <head>
   
   <title>BusMall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h2>BusMall</h2>
+  <header>
+    <h2>BusMall</h2>
+  </header>   
   <main>
     <section id="container">
       <img id="imgOne" src="" alt="">
       <img id="imgTwo" src="" alt="">
       <img id="imgThree" src="" alt="">
     </section>
-
+    <section id="chart">
+      <canvas id="myChart"> </canvas>
+    </section>
     <div id="showresultsbtn">Show Results</div>
     <ul id="display-results"></ul>
   </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

@@ -29,6 +29,8 @@ let imgOne = document.getElementById('imgOne');
 let imgTwo = document.getElementById('imgTwo');
 let imgThree = document.getElementById('imgThree');
 
+// refrence for canvas element for bar chart
+const ctx = document.getElementById('myChart').getContext('2d');
 
 // *************** Constructor!!!!!!!!!!***************
 
@@ -40,7 +42,7 @@ let imgThree = document.getElementById('imgThree');
 // times a item has been clicked-- clicks x
 // remember to push x "missed"
 
-function Item(name,fileExtension = 'jpg') {
+function Item(name, fileExtension = 'jpg') {
   this.name = name;
   this.src = `assets/${name}.${fileExtension}`;
   this.views = 0;
@@ -88,34 +90,40 @@ console.log(allItems);
 // push numbers into array x
 // use array to store 3 random numbers x
 
-function getRandomItem(){
+function getRandomItem() {
   // Dont understand why * allItems
   // Does it only create numbers in the index size?
   return Math.floor(Math.random() * allItems.length);
 }
 
-function renderImage(){
+let runningImage = [];
+
+function renderImage() {
   // use array to store 3 random numbers
   //missed
-  let runingImage = [];
 
   // control logic make sure all images are unique
-  while(runingImage.length < 3){
+  while (runningImage.length < 6) {
     let randomNumber = getRandomItem();
     // use array method to see if number already exis// push numbers into array
-    while(!runingImage.includes(randomNumber)){
-      runingImage.push(randomNumber);
+    while (!runningImage.includes(randomNumber)) {
+      runningImage.push(randomNumber);
     }
+    // Clear runningImage of 3 random numbers
+    console.log(runningImage);
   }
-  // shows three random number in running image array
-  // console.log(runingImage);
 
-  let x = runingImage.pop();
-  let y = runingImage.pop();
-  let z = runingImage.pop();
-  // console.log(x);
-  // console.log(y);
-  // console.log(z);
+  // shows three random number in running image array
+  // console.log(runningImage);
+  // runningImage = runningImage.splice(0, 3);
+
+  let x = runningImage.shift();
+  let y = runningImage.shift();
+  let z = runningImage.shift();
+  console.log(runningImage);
+  console.log(x);
+  console.log(y);
+  console.log(z);
 
   //render images
   // append the dom images
@@ -130,6 +138,7 @@ function renderImage(){
   imgThree.src = allItems[z].src;
   imgThree.alt = allItems[z].name;
   allItems[z].views++;
+
 }
 renderImage();
 
@@ -138,15 +147,15 @@ renderImage();
 
 
 
-function handleClick(event){
+function handleClick(event) {
 
   // incremets down each round
   totalRounds--;
   // incremetns to key name clicks
   // Dont understand event.target.alt
   let imgClick = event.target.alt;
-  for(let i = 0; i < allItems.length; i++){
-    if(imgClick === allItems[i].name) {
+  for (let i = 0; i < allItems.length; i++) {
+    if (imgClick === allItems[i].name) {
       console.log(imgClick);
       // increments votes for each object
       allItems[i].clicks++;
@@ -156,7 +165,7 @@ function handleClick(event){
   renderImage();
 
   // end attempts - knew I needed but had to reference
-  if(totalRounds === 0){
+  if (totalRounds === 0) {
     container.removeEventListener('click', handleClick);
   }
 }
@@ -165,24 +174,11 @@ function handleClick(event){
 
 // append the dom report
 
-function handleResults(event){
-  let resultsList = document.getElementById('display-results');
-  if(totalRounds === 0){
-    // loop through each object and create list
-    // Creates multi li elements
-    for(let i = 0; i < allItems.length; i++){
-      let li = document.createElement('li');
-      console.log(li);
-      //banana had 3 votes, and was seen 5 times.
-      li.textContent = `${allItems[i].name} had ${allItems[i].clicks} votes, and was seen ${allItems[i].views} times`;
-      resultsList.appendChild(li);
-      console.log(li);
-    }
+function handleResults(event) {
+  if (totalRounds === 0) {
+    renderChart();
   }
 }
-
-
-
 
 // event listener click
 container.addEventListener('click', handleClick);
@@ -191,3 +187,53 @@ container.addEventListener('click', handleClick);
 report.addEventListener('click', handleResults);
 
 
+// ********************Chart***********************
+function renderChart() {
+
+  const e = document.querySelector('#container');
+  e.remove();
+  const b = document.querySelector('#showresultsbtn');
+  b.remove();
+
+  let itemNames = [];
+  let itemClicks = [];
+  let itemViews = [];
+
+  for (let i = 0; i < allItems.length; i++) {
+    itemClicks.push(allItems[i].clicks);
+    itemNames.push(allItems[i].name);
+    itemViews.push(allItems[i].views);
+  }
+
+  const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      // stored in array of objects
+      labels: itemNames,
+      datasets: [{
+        label: '# of Votes',
+        data: itemClicks,
+        backgroundColor:
+          '#7F9172',
+        borderColor: '#7F9172',
+        borderWidth: 1
+      },
+      {
+        label: '# of views',
+        data: itemViews,
+        backgroundColor:
+          '#567568',
+        borderColor: '#567568',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+}

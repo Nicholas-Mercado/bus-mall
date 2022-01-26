@@ -70,3 +70,18 @@ Show report of
 - File path of image
 - Times the image has been shown
 - times a item has been clicked
+
+## LAB - 12
+
+#### __Links and Resources__
+
+[Array.prototype.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+[Chart.js](https://www.chartjs.org/)
+
+[A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+#### __Reflections and Comments__
+
+This was a stress free day of css and chart.js. I enjoyed practicing flexbox, and looking forward to working on grid. Char.js was fairly straight forward to install and use. 
+
