@@ -79,16 +79,18 @@ function renderImage() {
 
   imgOne.src = allItems[x].src;
   imgOne.alt = allItems[x].name;
-  allItems[x].views++;
-
+  
   imgTwo.src = allItems[y].src;
   imgTwo.alt = allItems[y].name;
-  allItems[y].views++;
-
+  
   imgThree.src = allItems[z].src;
   imgThree.alt = allItems[z].name;
-  allItems[z].views++;
-
+  while(totalRounds){
+    allItems[x].views++;
+    allItems[z].views++;
+    allItems[y].views++;
+    break;
+  }
 }
 renderImage();
 
