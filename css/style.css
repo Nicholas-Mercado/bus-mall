@@ -21,6 +21,8 @@ body{
   max-height: 350px;
   min-width: 200px;
   margin: 30px;
+  width: 300px;
+  height: 300px;
 }
 
 
@@ -54,6 +56,7 @@ header h2{
   width:10%;
   color: aliceblue;
 background-color: #567568 ;
+min-width: 150px;
 
 }
 

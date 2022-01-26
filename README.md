@@ -83,5 +83,19 @@ Show report of
 
 #### __Reflections and Comments__
 
-This was a stress free day of css and chart.js. I enjoyed practicing flexbox, and looking forward to working on grid. Char.js was fairly straight forward to install and use. 
+This was a stress free day of css and chart.js. I enjoyed practicing flexbox, and looking forward to working on grid. Char.js was fairly straight forward to install and use.
 
+## LAB - 13
+
+#### __Links and Resources__
+
+[JavaScript While Loop](https://www.w3schools.com/js/js_loop_while.asp)
+
+[Equality operators](https://docs.microsoft.com/en-us/cpp/cpp/equality-operators-equal-equal-and-exclpt-equal?view=msvc-170#:~:text=The%20not%2Dequal%2Dto%20operator,%3B%20otherwise%2C%20it%20returns%20false%20.)
+
+[grepper](https://chrome.google.com/webstore/detail/grepper/amaaokahonnfjjemodnpmeenfpnnbkco?hl=en)
+-Gamechanger
+
+#### __Reflections and Comments__
+
+Pretty easy day of formulaic work. KNowing where i want to grab data to send to the local storage is going to take some thinking though. If you are reading this download Grepper, very useful little plugin for chrome
