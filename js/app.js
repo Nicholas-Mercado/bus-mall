@@ -29,7 +29,6 @@ function Item(name, fileExtension = 'jpg') {
 
 let retrieveItems = localStorage.getItem('items');
 let parsedItems = JSON.parse(retrieveItems);
-// console.log(parsedItems);
 
 if(retrieveItems){
   allItems = parsedItems;
@@ -105,7 +104,6 @@ function handleClick(event) {
   let imgClick = event.target.alt;
   for (let i = 0; i < allItems.length; i++) {
     if (imgClick === allItems[i].name) {
-      // console.log(imgClick);
       allItems[i].clicks++;
     }
   }
@@ -123,12 +121,9 @@ function handleResults(event) {
     renderChart();
   }
   // *****LOCAL STORAGE********
-  // Step one Stringify
   let stringAllItems = JSON.stringify(allItems);
 
-  // step two Set the Item in Storage
   localStorage.setItem('items',stringAllItems);
-  // console.log(stringAllItems);
 }
 
 
