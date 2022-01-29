@@ -99,3 +99,11 @@ This was a stress free day of css and chart.js. I enjoyed practicing flexbox, an
 #### __Reflections and Comments__
 
 Pretty easy day of formulaic work. KNowing where i want to grab data to send to the local storage is going to take some thinking though. If you are reading this download Grepper, very useful little plugin for chrome
+
+## LAB - 14
+
+### Overview
+
+#### __Reflections and Comments__
+
+Went over all site and code cleaning up any loose ends. Feel good about how this lab went. Learned a lot and reenforced some key concepts.
